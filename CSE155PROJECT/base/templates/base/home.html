@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+</head>
+
+<body>
+
+<!-- header section containing logo and user profile -->
+<header>
+  <div class="logo">
+    <img src="{% static 'images/logo.png' %}" alt="Logo">
+  </div>
+  <div class="user-profile">
+    <img src="{% static 'images/profile.png' %}" alt="Profile Picture">
+    <h2>Username</h2>
+    <p>User Bio</p>
+  </div>
+</header>
+
+<!-- card container section containing the cards -->
+<div class="card-container">
+  {% for account in uProfile.account_set.all %}
+  <div class="card">
+    <div class="image">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
+    </div>
+    <div class="title">
+      <h1>Write title Here</h1>
+    </div>
+    <div class="des">
+      <p>You can Add Desccription Here...</p>
+      <button>Read More...</button>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>
